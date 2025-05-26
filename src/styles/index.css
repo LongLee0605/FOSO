@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --background-image-gradient-header: linear-gradient(
+    90deg,
+    rgba(13, 87, 198, 1) 0%,
+    rgba(55, 207, 255, 1) 50%,
+    rgba(15, 94, 214, 1) 100%
+  );
+  --background-image-gradient-deal: linear-gradient(
+    90deg,
+    #ffd666 0%,
+    #ffab00 100%
+  );
+  --container-pc: 1440px;
+  --color-brand-yellow-primary: #faca4a;
+  --color-input-disble: #919eab;
+  --color-secondary: #637381;
+  --color-brand-50: #e6f1ff;
+  --color-brand-100: #cde4fe;
+  --color-brand-error: #b71d18;
+  --color-brand-blue-500: #0373f3;
+  --color-brand-blue-600: #025fca;
+  --color-brand-blue-700: #024897;
+  --color-brand-button-header: #0155c6;
+  --color-text-primary: #1c252e;
+  --font-primary: "Epilogue", "sans-serif";
+}
+
+@layer base {
+  html {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-primary);
+    color: var(--color-text-primary);
+  }
+
+  body {
+    font-family: var(--font-primary);
+    color: var(--color-text-primary);
+  }
+
+  * {
+    font-family: inherit;
+    color: inherit;
+  }
+}
