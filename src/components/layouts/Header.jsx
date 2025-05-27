@@ -6,10 +6,10 @@ import React from "react";
 
 const Header = () => {
   return (
-    <header className="w-full">
+    <header className="w-full ">
       <TopBanner />
       <Navbar />
-      <CategoryMenu />
+      <div className="2xl:block lg:block hidden"><CategoryMenu /></div>
     </header>
   );
 };

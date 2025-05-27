@@ -1,7 +1,6 @@
 import React from "react";
 import { bct, lgVN } from "../../assets/images";
 
-// Component tối ưu cho hiệu ứng hover
 const HoverAnimatedLink = ({ children, isActive = false, className = "" }) => {
   return (
     <div className={`relative inline-block group cursor-pointer ${className}`}>
@@ -42,7 +41,7 @@ const Footer = () => {
     <footer className="relative bg-[url('./src/assets/images/footer.jpg')] bg-cover bg-top-right bg-no-repeat">
       <div className="absolute inset-0 bg-white opacity-35"></div>
       <div className="relative max-w-pc w-full mx-auto lg:py-20 py-10 2xl:px-0 px-4">
-        <div className="flex justify-between gap-8">
+        <div className="flex justify-between flex-wrap flex-col lg:flex-row gap-8">
           <div className="">
             <div className="space-y-6">
               <h3 className="text-xl font-semibold text-brand-blue-800 uppercase tracking-wide">
@@ -71,8 +70,6 @@ const Footer = () => {
               </div>
             </div>
           </div>
-
-          {/* Sitemap */}
           <div className="">
             <h4 className="text-2xl font-semibold text-brand-blue-800 mb-6">
               Sitemap
@@ -87,8 +84,6 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-
-          {/* Legal */}
           <div className="min-w-32">
             <h4 className="text-2xl font-semibold text-brand-blue-800 mb-6">
               Legal
@@ -105,7 +100,6 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-
           <div className="">
             <h4 className="text-2xl font-semibold text-brand-blue-800 mb-6">
               Download App
@@ -155,7 +149,7 @@ const Footer = () => {
               </a>
             </div>
             <div className="mt-8">
-              <div className="flex items-center justify-end space-x-2">
+              <div className="flex items-center justify-start lg:justify-end space-x-2">
                 <div>
                   <img src={lgVN} />
                 </div>

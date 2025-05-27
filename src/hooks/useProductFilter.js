@@ -37,13 +37,11 @@ export const useProductFilter = () => {
   const [filters, setFilters] = useState(INITIAL_FILTERS);
   const [expandedSections, setExpandedSections] = useState(INITIAL_EXPANDED);
   const [sortBy, setSortBy] = useState("default");
+  const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
 
-  // Optimized filter logic
   const filteredProducts = useMemo(() => {
     let filtered = productsData.products;
     let needsCopy = false;
-
-    // Apply filters efficiently
     if (filters.category !== "all") {
       if (!needsCopy) {
         filtered = [...filtered];
@@ -104,7 +102,6 @@ export const useProductFilter = () => {
     return filtered;
   }, [filters]);
 
-  // Separate sorting logic
   const sortedProducts = useMemo(() => {
     if (sortBy === "default" || !SORT_FUNCTIONS[sortBy]) {
       return filteredProducts;
@@ -113,7 +110,6 @@ export const useProductFilter = () => {
     return [...filteredProducts].sort(SORT_FUNCTIONS[sortBy]);
   }, [filteredProducts, sortBy]);
 
-  // Memoized handlers
   const handleFilterChange = useCallback((filterType, value) => {
     setFilters((prev) => {
       const newValue =
@@ -145,14 +141,25 @@ export const useProductFilter = () => {
     setFilters(INITIAL_FILTERS);
   }, []);
 
+  const openFilterModal = useCallback(() => {
+    setIsFilterModalOpen(true);
+  }, []);
+
+  const closeFilterModal = useCallback(() => {
+    setIsFilterModalOpen(false);
+  }, []);
+
   return {
     filters,
     expandedSections,
     sortBy,
     sortedProducts,
+    isFilterModalOpen,
     handleFilterChange,
     toggleSection,
     clearFilters,
     setSortBy,
+    openFilterModal,
+    closeFilterModal,
   };
 };

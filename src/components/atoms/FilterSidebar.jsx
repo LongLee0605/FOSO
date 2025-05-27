@@ -8,13 +8,12 @@ import PriceButton from "./PriceButton";
 const FilterSidebar = memo(
   ({ filters, expandedSections, onFilterChange, onToggleSection }) => {
     return (
-      <div className="max-w-80 w-full flex-shrink-0">
+      <div className="max-w-80 w-full flex-shrink-0 hidden 2xl:block">
         <div className="bg-white sticky top-6 py-3 rounded-lg shadow-sm border border-gray-100">
           <div className="p-3 flex items-center text-2xl font-bold text-brand-blue-500 gap-3 border-b-[1px] border-[#919EAB33]">
             <img src={filter} alt="Filter icon" /> Bộ Lọc
           </div>
 
-          {/* Categories */}
           <FilterSection
             title="Danh mục sản phẩm"
             section="category"
@@ -33,7 +32,6 @@ const FilterSidebar = memo(
             </div>
           </FilterSection>
 
-          {/* Price Range */}
           <FilterSection
             title="Khoảng giá"
             section="price"
@@ -52,7 +50,6 @@ const FilterSidebar = memo(
             </div>
           </FilterSection>
 
-          {/* Brands */}
           <FilterSection
             title="Thương hiệu"
             section="brand"
@@ -71,7 +68,6 @@ const FilterSidebar = memo(
             </div>
           </FilterSection>
 
-          {/* Years */}
           <FilterSection
             title="Năm sản xuất"
             section="year"
@@ -90,7 +86,6 @@ const FilterSidebar = memo(
             </div>
           </FilterSection>
 
-          {/* Origins */}
           <FilterSection
             title="Xuất xứ"
             section="origin"

@@ -18,7 +18,6 @@ const SortButtons = ({ sortBy, setSortBy }) => {
 
   const isPriceActive = sortBy === "price_low" || sortBy === "price_high";
 
-  // Hàm để lấy label hiện tại của price button
   const getCurrentPriceLabel = () => {
     const currentPrice = priceOptions.find((option) => option.value === sortBy);
     return currentPrice ? currentPrice.label : "Giá: Thấp → Cao";

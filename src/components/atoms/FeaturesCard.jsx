@@ -41,8 +41,8 @@ const FeaturesCard = () => {
   ];
 
   return (
-    <div className="max-w-pc mx-auto mt-5 py-6 2xl:px-0 px-4">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div className="max-w-pc mx-auto mt-5 pb-0 pt-5 2xl:px-0 px-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-8">
         {features.map((feature) => (
           <div
             key={feature.id}

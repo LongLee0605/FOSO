@@ -22,7 +22,7 @@ const CategoryMenu = () => {
     { icon: iconRefresh, text: "30 Ngày Đổi Trả" },
   ];
 
-  // Lấy hình ảnh đại diện cho từng category từ data
+
   const getCategoryImage = (categoryId) => {
     const categoryProducts = productsData.products.filter(
       (product) => product.category === categoryId
@@ -30,7 +30,7 @@ const CategoryMenu = () => {
     return categoryProducts.length > 0 ? categoryProducts[0].image : null;
   };
 
-  // Mapping categories với hình ảnh thực từ data
+
   const categoryMapping = {
     bo_loc_dau: {
       name: "Bộ Lọc Dầu",
@@ -50,14 +50,12 @@ const CategoryMenu = () => {
     },
   };
 
-  // Lấy 6 sản phẩm liên quan cho phần trên (3x2 grid)
   const getRelatedProducts = (categoryId) => {
     return productsData.products
       .filter((product) => product.category === categoryId)
       .slice(0, 6);
   };
 
-  // Lấy 5 sản phẩm bán chạy cho phần dưới
   const getBestSellingProducts = (categoryId) => {
     return productsData.products
       .filter((product) => product.category === categoryId)
@@ -68,7 +66,6 @@ const CategoryMenu = () => {
     return new Intl.NumberFormat("vi-VN").format(price);
   };
 
-  // Lấy category info từ filterOptions
   const getCategoryInfo = (categoryId) => {
     return filterOptions.categories.find((cat) => cat.id === categoryId);
   };
@@ -82,11 +79,11 @@ const CategoryMenu = () => {
             onMouseEnter={() => setIsOpen(true)}
             onMouseLeave={() => setIsOpen(false)}
           >
-            <button className="bg-brand-button-header text-white px-4 py-6 rounded-lg flex items-center gap-2 transition-all duration-300">
-              <div>
+            <button className="bg-brand-button-header text-white 2xl:px-4 lg:px-4 2xl:py-6 lg:py-6 p-3 rounded-lg flex items-center gap-2 transition-all duration-300">
+              <div className="min-w-5">
                 <img src={iconBar} className="w-5 h-5" />
               </div>
-              <div className="flex items-center">
+              <div className="hidden items-center 2xl:flex lg:flex">
                 <div className="pr-8 text-base font-bold leading-0">
                   Danh Mục Sản Phẩm
                 </div>
@@ -99,15 +96,13 @@ const CategoryMenu = () => {
                 </span>
               </div>
             </button>
-
-            {/* Mega Menu Dropdown */}
             <div
               className={`absolute top-full left-0 mt-1 bg-[#F4F6F8] border border-gray-200 rounded-lg shadow-xl z-50 transition-all duration-500 ease-in-out transform ${
                 isOpen
                   ? "opacity-100 translate-y-0 visible"
                   : "opacity-0 -translate-y-2 invisible"
               }`}
-              style={{ width: "1400px" }}
+              style={{ width: "975px" }}
             >
               <div className="flex">
                 <div className="w-72 bg-[#F4F6F8] rounded-l-lg">
@@ -163,9 +158,7 @@ const CategoryMenu = () => {
                   </div>
                 </div>
 
-                {/* Products Content */}
                 <div className="flex-1 p-6">
-                  {/* Related Products Section - Flex ngang giống UI */}
                   <div className="mb-6">
                     <div className="grid grid-cols-3 gap-x-6 gap-y-6">
                       {getRelatedProducts(activeCategory).map(
@@ -174,7 +167,6 @@ const CategoryMenu = () => {
                             key={product.id}
                             className="group cursor-pointer flex items-center gap-2 p-2 rounded-lg bg-white shadow-xs"
                           >
-                            {/* Hình ảnh bên trái */}
                             <div className="w-16 h-16 bg-white rounded-lg overflow-hidden flex-shrink-0 p-1">
                               <img
                                 src={product.image}
@@ -182,7 +174,6 @@ const CategoryMenu = () => {
                                 className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                               />
                             </div>
-                            {/* Tên sản phẩm bên phải */}
                             <p className=" font-medium flex-1 line-clamp-1">
                               {product.name}
                             </p>
@@ -191,11 +182,7 @@ const CategoryMenu = () => {
                       )}
                     </div>
                   </div>
-
-                  {/* Divider line */}
                   <div className="border-t border-gray-200 mb-6"></div>
-
-                  {/* Best Selling Products Section */}
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-lg font-bold text-gray-800">
                       Sản Phẩm Bán Chạy
@@ -217,15 +204,12 @@ const CategoryMenu = () => {
                       </svg>
                     </button>
                   </div>
-
-                  {/* Products Grid - 5 sản phẩm theo hàng ngang */}
                   <div className="grid grid-cols-5 gap-3">
                     {getBestSellingProducts(activeCategory).map((product) => (
                       <div
                         key={product.id}
                         className="group shadow-sm bg-white border border-gray-100 rounded-lg p-2 hover:shadow-lg transition-all duration-300 cursor-pointer"
                       >
-                        {/* Product Image */}
                         <div className="aspect-square bg-gray-50 rounded-lg mb-2 overflow-hidden p-2">
                           <img
                             src={product.image}
@@ -233,14 +217,10 @@ const CategoryMenu = () => {
                             className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                           />
                         </div>
-
-                        {/* Product Info */}
                         <div className="">
                           <h4 className="font-semibold mb-1 line-clamp-2">
                             {product.name}
                           </h4>
-
-                          {/* Price */}
                           <div className="space-y-1">
                             <div className="text-brand-error font-bold text-xl">
                               {formatPrice(product.salePrice)} đ
@@ -260,7 +240,7 @@ const CategoryMenu = () => {
             </div>
           </div>
 
-          <nav className="hidden md:flex items-center gap-5">
+          <nav className="hidden 2xl:flex lg:flex items-center gap-5">
             {categories.map((category, index) => (
               <a
                 key={index}
@@ -272,7 +252,7 @@ const CategoryMenu = () => {
             ))}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden 2xl:flex items-center gap-6">
             {features.map((feature, index) => (
               <div key={index} className="flex items-center gap-2">
                 <img src={feature.icon} alt={feature.text} />

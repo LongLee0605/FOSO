@@ -4,7 +4,7 @@ import { iconPhone, iconSale, iconSmartPhone } from "../../assets/icons";
 const TopBanner = () => {
   return (
     <div className="bg-gradient-header text-white text-sm py-1 ">
-      <div className="max-w-pc w-full mx-auto flex justify-between items-center 2xl:px-0 px-4">
+      <div className="max-w-pc w-full mx-auto flex justify-between items-center flex-wrap gap-1 2xl:px-0 px-4">
         <div className="flex items-center">
           <div className="mr-2">
             <img src={iconSale} />

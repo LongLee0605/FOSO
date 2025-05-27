@@ -49,3 +49,20 @@
     color: inherit;
   }
 }
+.filter-modal-enter {
+  transform: translateY(100%);
+}
+
+.filter-modal-enter-active {
+  transform: translateY(0);
+  transition: transform 300ms ease-out;
+}
+
+.filter-modal-exit {
+  transform: translateY(0);
+}
+
+.filter-modal-exit-active {
+  transform: translateY(100%);
+  transition: transform 250ms ease-in;
+}

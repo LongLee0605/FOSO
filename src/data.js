@@ -58,8 +58,6 @@ export const productsData = {
       origin: "Nhật Bản",
       inStock: true,
     },
-
-    // Lọc nhiên liệu - Fuel Filter
     {
       id: 5,
       name: "Lọc nhiên liệu Fuel Filter – Chevrolet Colorado, Trailblazer (12642623)",
@@ -116,8 +114,6 @@ export const productsData = {
       origin: "Nhật Bản",
       inStock: true,
     },
-
-    // Bộ lọc dầu - Oil Filter
     {
       id: 9,
       name: "Bộ lọc dầu Oil Filter – Chevrolet Colorado, Trailblazer (12636838)",
@@ -174,8 +170,6 @@ export const productsData = {
       origin: "Nhật Bản",
       inStock: true,
     },
-
-    // Chua phân loại - Uncategorized
     {
       id: 13,
       name: "Cảm biến áp suất lốp TPMS – Universal (433MHz)",
@@ -232,8 +226,6 @@ export const productsData = {
       origin: "Trung Quốc",
       inStock: true,
     },
-
-    // Thêm 26 sản phẩm nữa để đủ 42 sản phẩm
     {
       id: 17,
       name: "Lọc gió động cơ Air Filter – Isuzu D-Max (8-98037-853-0)",

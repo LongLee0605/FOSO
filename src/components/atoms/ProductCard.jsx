@@ -16,7 +16,7 @@ const ProductCard = ({ product }) => {
         <img
           src={product.image}
           alt={product.name}
-          className="w-full object-cover h-[263px] transition-transform duration-300 group-hover:scale-105"
+          className="w-full 2xl:object-cover object-none h-[263px] transition-transform duration-300 group-hover:scale-105 p-1"
         />
         {product.status && (
           <div className="text-sm flex items-center px-2 py-1 bg-gradient-deal rounded-full gap-1 font-semibold w-32 ml-5 mt-4 transition-transform duration-300 group-hover:scale-110">
