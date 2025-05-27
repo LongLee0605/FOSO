@@ -4,7 +4,7 @@ import { fetchProducts } from "../../services/ProductService";
 import React, { useEffect, useState } from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
-const FeauturesProduct = () => {
+const FeaturesProduct = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -64,4 +64,4 @@ const FeauturesProduct = () => {
   );
 };
 
-export default FeauturesProduct;
+export default FeaturesProduct;

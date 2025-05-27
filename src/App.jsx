@@ -1,15 +1,74 @@
 import Layout from "./components/layouts/Layout";
-import FeauturesProduct from "./components/molecules/FeauturesProduct";
+import FeaturesProduct from "./components/molecules/FeaturesProduct"; // Sửa lỗi chính tả
 import ProductFilter from "./components/atoms/ProductFilter";
 import AddressBanner from "./components/atoms/AddressBanner";
+import { Helmet } from "react-helmet-async";
 
 function App() {
   return (
-    <Layout>
-      <FeauturesProduct />
-      <ProductFilter />
-      <AddressBanner />
-    </Layout>
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>
+          FOSO – Chuyên cung cấp phụ tùng ô tô chính hãng | Bộ lọc, cảm biến,
+          đèn LED
+        </title>
+        <meta
+          name="description"
+          content="FOSO - Đơn vị hàng đầu cung cấp phụ tùng ô tô chất lượng cao: bộ lọc dầu, lọc khí, lọc nhiên liệu, cảm biến áp suất lốp, kính chiếu hậu, đèn LED, cảm biến lùi không dây, máy phát điện."
+        />
+        <meta
+          name="keywords"
+          content="FOSO, phụ tùng ô tô, bộ lọc dầu, lọc khí ô tô, lọc nhiên liệu, cảm biến áp suất lốp, kính chiếu hậu, đèn LED ô tô, cảm biến lùi không dây, máy phát điện, phụ tùng chính hãng"
+        />
+        <meta name="author" content="FOSO" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#ffffff" />
+        <meta
+          property="og:title"
+          content="FOSO – Chuyên cung cấp phụ tùng ô tô chính hãng"
+        />
+        <meta
+          property="og:description"
+          content="Cửa hàng phụ tùng ô tô uy tín với đầy đủ các sản phẩm chất lượng cao, giá cạnh tranh."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://foso-xi.vercel.app/" />
+        <meta
+          property="og:image"
+          content="https://foso-xi.vercel.app/images/foso-logo.png"
+        />
+        <meta
+          property="og:site_name"
+          content="FOSO - Phụ tùng ô tô chính hãng"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="FOSO – Chuyên cung cấp phụ tùng ô tô chính hãng"
+        />
+        <meta
+          name="twitter:description"
+          content="Khám phá bộ sưu tập phụ tùng ô tô chất lượng cao tại FOSO"
+        />
+        <meta
+          name="twitter:image"
+          content="https://foso-xi.vercel.app/images/foso-logo.png"
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://foso-xi.vercel.app/" />
+        <meta name="language" content="vi" />
+        <meta name="geo.region" content="VN" />
+        <meta name="geo.placename" content="Vietnam" />
+        <link rel="icon" href="/favicon.ico" />
+      </Helmet>
+
+      <Layout>
+        <FeaturesProduct />
+        <ProductFilter />
+        <AddressBanner />
+      </Layout>
+    </>
   );
 }
 
