@@ -11,15 +11,15 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+    <div className="group bg-white rounded-lg shadow-[0_12px_24px_-4px_#919EAB1F] group-hover:shadow-[0_8px_16px_0_#0375F329] transition-shadow duration-300 overflow-hidden">
       <div className="">
         <img
           src={product.image}
           alt={product.name}
-          className="w-full object-cover h-[263px]"
+          className="w-full object-cover h-[263px] transition-transform duration-300 group-hover:scale-105"
         />
         {product.status && (
-          <div className="text-sm flex items-center px-2 py-1 bg-gradient-deal rounded-full gap-1 font-semibold w-32 ml-5 mt-4">
+          <div className="text-sm flex items-center px-2 py-1 bg-gradient-deal rounded-full gap-1 font-semibold w-32 ml-5 mt-4 transition-transform duration-300 group-hover:scale-110">
             <img src={iconFire} alt="fire icon" />
             {product.status}
           </div>
@@ -31,7 +31,7 @@ const ProductCard = ({ product }) => {
         </h3>
         <div className="mb-4">
           <div className="flex items-center space-x-2">
-            <span className="text-xl font-bold text-brand-error">
+            <span className="text-xl font-bold text-brand-error transition-transform duration-300 group-hover:scale-110">
               {formatPrice(product.salePrice)} đ
             </span>
           </div>
@@ -51,9 +51,9 @@ const ProductCard = ({ product }) => {
           type="button"
           onClick={handleBuyNow}
           disabled={!product.inStock}
-          className={`w-full py-2 px-4 rounded font-medium transition-colors duration-200 ${
+          className={`w-full py-2 px-4 rounded font-medium transition-transform duration-300 ${
             product.inStock
-              ? "bg-brand-50 hover:bg-brand-100 text-brand-blue-600"
+              ? "bg-brand-50 group-hover:bg-brand-100 text-brand-blue-600 group-hover:scale-105"
               : "bg-gray-300 text-gray-500 cursor-not-allowed"
           }`}
         >

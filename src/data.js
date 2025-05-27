@@ -2,7 +2,6 @@ import { pro1, pro2, pro3, pro4, pro5 } from "./assets/images";
 
 export const productsData = {
   products: [
-    // Lọc gió động cơ - Air Filter
     {
       id: 1,
       name: "Lọc gió động cơ Air Filter – Chevrolet Colorado, Trailblazer (52046262)",

@@ -5,13 +5,13 @@ import { lgVN } from "../../assets/images";
 const UserActions = () => {
   return (
     <div className="flex items-center space-x-4">
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 hover:bg-brand-50 rounded-full px-2 py-1">
         <span className="text-red-500 text-xl">
           <img src={lgVN} />
         </span>
         <span className="font-medium">VI</span>
       </div>
-      <div className="flex items-center">
+      <div className="flex items-center hover:bg-brand-50 rounded-full px-2 py-1">
         <div className="flex items-center gap-2 relative">
           <img src={iconCart} />
           <div className="font-medium">Giỏ hàng</div>
@@ -20,8 +20,7 @@ const UserActions = () => {
           </span>
         </div>
       </div>
-
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 hover:bg-brand-50 rounded-full px-2 py-1">
         <span className="">
           <img src={iconUserCircle} />
         </span>

@@ -19,7 +19,7 @@ const ProductFilter = () => {
   } = useProductFilter();
 
   return (
-    <div className="w-full max-w-pc mx-auto py-10">
+    <div className="w-full max-w-pc mx-auto py-10 2xl:px-0 px-4">
       <div className="flex gap-6">
         <FilterSidebar
           filters={filters}

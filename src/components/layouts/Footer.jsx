@@ -1,152 +1,121 @@
 import React from "react";
+import { bct, lgVN } from "../../assets/images";
+
+// Component tối ưu cho hiệu ứng hover
+const HoverAnimatedLink = ({ children, isActive = false, className = "" }) => {
+  return (
+    <div className={`relative inline-block group cursor-pointer ${className}`}>
+      <span
+        className={`relative z-20 block transition-all duration-300 ease-in-out group-hover:translate-x-4 ${
+          isActive
+            ? "text-text-primary font-medium"
+            : "text-secondary group-hover:text-text-primary group-hover:font-semibold"
+        }`}
+      >
+        {children}
+      </span>
+      <div
+        className={`absolute left-0 top-1/2 h-0.5 transform -translate-y-1/2 transition-all duration-400 ease-out ${
+          isActive ? "w-6 bg-black" : "w-0 bg-gray-600 group-hover:w-3"
+        }`}
+      />
+    </div>
+  );
+};
 
 const Footer = () => {
+  const sitemapItems = [
+    { id: "about", label: "About" },
+    { id: "article", label: "Article" },
+    { id: "cart", label: "Cart" },
+    { id: "contact", label: "Contact" },
+  ];
+
+  const legalItems = [
+    { id: "privacy", label: "Privacy Policy" },
+    { id: "cookie", label: "Cookie policy" },
+    { id: "delivery", label: "Delivery policy" },
+    { id: "faqs", label: "FAQs" },
+  ];
+
   return (
-    <footer className="bg-gray-50 border-t border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div className="col-span-1 md:col-span-1">
-            <div className="space-y-4">
-              <h3 className="text-lg font-bold text-gray-900 uppercase tracking-wide">
+    <footer className="relative bg-[url('./src/assets/images/footer.jpg')] bg-cover bg-top-right bg-no-repeat">
+      <div className="absolute inset-0 bg-white opacity-35"></div>
+      <div className="relative max-w-pc w-full mx-auto lg:py-20 py-10 2xl:px-0 px-4">
+        <div className="flex justify-between gap-8">
+          <div className="">
+            <div className="space-y-6">
+              <h3 className="text-xl font-semibold text-brand-blue-800 uppercase tracking-wide">
                 VIET HUNG AUTO PRODUCTION TRADING JOINT STOCK COMPANY
               </h3>
 
-              <div className="space-y-2 text-sm text-gray-600">
-                <p>
-                  <span className="font-medium">Tax code:</span> 0305094228
+              <div className="space-y-2 text-sm">
+                <p className="font-bold text-secondary">
+                  <span className="font-normal">Tax code:</span> 0305094228
                 </p>
-                <p>
-                  <span className="font-medium">Address:</span> 13 Nghia Thuc,
+                <p className="font-bold text-secondary">
+                  <span className="font-normal">Address:</span> 13 Nghia Thuc,
                   Ward 05, District 5, Ho Chi Minh City, Viet Nam
                 </p>
-                <p>
-                  <span className="font-medium">Phone number:</span> 0283 760
+                <p className="font-bold text-secondary">
+                  <span className="font-normal">Phone number:</span> 0283 760
                   7607
                 </p>
-                <p>
-                  <span className="font-medium">Opening hour:</span> 09:00 -
+                <p className="font-bold text-secondary">
+                  <span className="font-normal">Opening hour:</span> 09:00 -
                   22:00 from Mon - Fri
                 </p>
               </div>
-
-              {/* Certification Badge */}
-              <div className="mt-6">
-                <div className="inline-flex items-center bg-blue-600 text-white px-3 py-2 rounded-lg">
-                  <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center mr-2">
-                    <svg
-                      className="w-5 h-5 text-blue-600"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                  <div className="text-xs">
-                    <div className="font-bold">ĐÃ THÔNG BÁO</div>
-                    <div>BỘ CÔNG THƯƠNG</div>
-                  </div>
-                </div>
+              <div>
+                <img src={bct} alt="BCT" />
               </div>
             </div>
           </div>
 
           {/* Sitemap */}
-          <div className="col-span-1">
-            <h4 className="text-lg font-semibold text-gray-900 mb-4">
+          <div className="">
+            <h4 className="text-2xl font-semibold text-brand-blue-800 mb-6">
               Sitemap
             </h4>
             <ul className="space-y-3">
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
-                >
-                  About
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
-                >
-                  Article
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
-                >
-                  Cart
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
-                >
-                  Contact
-                </a>
-              </li>
+              {sitemapItems.map((item) => (
+                <li key={item.id}>
+                  <a href="#" className="block">
+                    <HoverAnimatedLink>{item.label}</HoverAnimatedLink>
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Legal */}
-          <div className="col-span-1">
-            <h4 className="text-lg font-semibold text-gray-900 mb-4">Legal</h4>
+          <div className="min-w-32">
+            <h4 className="text-2xl font-semibold text-brand-blue-800 mb-6">
+              Legal
+            </h4>
             <ul className="space-y-3">
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
-                >
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
-                >
-                  Cookie policy
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
-                >
-                  Delivery policy
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
-                >
-                  FAQs
-                </a>
-              </li>
+              {legalItems.map((item) => (
+                <li key={item.id}>
+                  <a href="#" className="block">
+                    <HoverAnimatedLink isActive={item.isActive}>
+                      {item.label}
+                    </HoverAnimatedLink>
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Download App */}
-          <div className="col-span-1">
-            <h4 className="text-lg font-semibold text-gray-900 mb-4">
+          <div className="">
+            <h4 className="text-2xl font-semibold text-brand-blue-800 mb-6">
               Download App
             </h4>
-            <div className="space-y-3">
-              {/* Google Play Store */}
+            <div className="flex flex-col space-y-3">
               <a
                 href="#"
-                className="inline-block w-full max-w-[200px] bg-black text-white rounded-lg p-3 hover:bg-gray-800 transition-colors duration-200"
+                className="inline-block  bg-black text-white rounded-lg px-5 py-4 w-60 hover:bg-gray-800 transition-colors duration-200"
               >
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center justify-center space-x-3">
                   <div className="w-8 h-8">
                     <svg
                       viewBox="0 0 24 24"
@@ -164,13 +133,11 @@ const Footer = () => {
                   </div>
                 </div>
               </a>
-
-              {/* Apple App Store */}
               <a
                 href="#"
-                className="inline-block w-full max-w-[200px] bg-blue-600 text-white rounded-lg p-3 hover:bg-blue-700 transition-colors duration-200"
+                className="inline-block  bg-brand-blue-500 text-white rounded-lg px-5 py-4 w-60 hover:bg-brand-blue-800 transition-colors duration-200"
               >
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center justify-center space-x-3">
                   <div className="w-8 h-8">
                     <svg
                       viewBox="0 0 24 24"
@@ -187,14 +154,12 @@ const Footer = () => {
                 </div>
               </a>
             </div>
-
-            {/* Language Selector */}
-            <div className="mt-6">
-              <div className="flex items-center space-x-2">
-                <div className="w-6 h-6 rounded-full bg-red-600 flex items-center justify-center">
-                  <span className="text-white text-xs font-bold">★</span>
+            <div className="mt-8">
+              <div className="flex items-center justify-end space-x-2">
+                <div>
+                  <img src={lgVN} />
                 </div>
-                <span className="text-sm font-medium text-gray-700">VI</span>
+                <span className="text-xl font-medium ">VI</span>
                 <svg
                   className="w-4 h-4 text-gray-400"
                   fill="none"
@@ -212,28 +177,26 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
-        {/* Scroll to Top Button */}
-        <div className="flex justify-end mt-8">
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="w-10 h-10 bg-gray-300 hover:bg-gray-400 rounded-full flex items-center justify-center transition-colors duration-200"
+      </div>
+      <div className="fixed bottom-10 right-10 ">
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="cursor-pointer w-10 h-10 bg-transparent border-brand-blue-800 hover:bg-brand-50 border-2 rounded-full flex items-center justify-center transition-colors duration-200"
+        >
+          <svg
+            className="w-5 h-5 text-brand-blue-800"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
           >
-            <svg
-              className="w-5 h-5 text-gray-600"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 15l7-7 7 7"
-              />
-            </svg>
-          </button>
-        </div>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M5 15l7-7 7 7"
+            />
+          </svg>
+        </button>
       </div>
     </footer>
   );

@@ -5,7 +5,7 @@ import { GoArrowRight } from "react-icons/go";
 const AddressBanner = () => {
   return (
     <div className="bg-brand-50 py-10">
-      <div className="max-w-pc mx-auto w-full">
+      <div className="max-w-pc mx-auto w-full 2xl:px-0 px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-3">
             <img src={map} />

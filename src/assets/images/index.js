@@ -8,5 +8,20 @@ import pro4 from "./pro4.png";
 import pro5 from "./pro5.png";
 import filter from "./filter.png";
 import map from "./map.png";
+import bct from "./bct.png";
+import footer from "./footer.jpg";
 
-export { logoHeader, lgVN, banner, pro1, pro2, pro3, pro4, pro5, filter,map };
+export {
+  logoHeader,
+  lgVN,
+  banner,
+  pro1,
+  pro2,
+  pro3,
+  pro4,
+  pro5,
+  filter,
+  map,
+  bct,
+  footer,
+};

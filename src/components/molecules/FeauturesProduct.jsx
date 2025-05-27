@@ -44,8 +44,8 @@ const FeauturesProduct = () => {
   }
 
   return (
-    <div className="max-w-pc w-full mx-auto">
-      <div className="pt-4 pb-6">
+    <div className="max-w-pc w-full mx-auto ">
+      <div className="pt-4 pb-6 2xl:px-0 px-4">
         <div className="flex items-center gap-3">
           <p className="text-sm font-normal text-input-disble">Trang chủ</p>
           <MdKeyboardArrowRight />
