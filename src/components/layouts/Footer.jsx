@@ -1,5 +1,5 @@
 import React from "react";
-import { bct, lgVN } from "../../assets/images";
+import { bct, footer, lgVN } from "../../assets/images";
 
 const HoverAnimatedLink = ({ children, isActive = false, className = "" }) => {
   return (
@@ -38,7 +38,8 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bg-[url('./src/assets/images/footer.jpg')] bg-cover bg-top-right bg-no-repeat">
+    <footer className="relative overflow-hidden">
+      <img src={footer} className="absolute inset-0 bg-cover bg-top-right bg-no-repeat"/>
       <div className="absolute inset-0 bg-white opacity-35"></div>
       <div className="relative max-w-pc w-full mx-auto lg:py-20 py-10 2xl:px-0 px-4">
         <div className="flex justify-between flex-wrap flex-col lg:flex-row gap-8">
