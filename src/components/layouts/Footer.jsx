@@ -39,7 +39,7 @@ const Footer = () => {
 
   return (
     <footer className="relative overflow-hidden">
-      <img src={footer} className="absolute inset-0 bg-cover bg-top-right bg-no-repeat"/>
+      <img src={footer} className="absolute inset-0 h-full object-top-right object-cover"/>
       <div className="absolute inset-0 bg-white opacity-35"></div>
       <div className="relative max-w-pc w-full mx-auto lg:py-20 py-10 2xl:px-0 px-4">
         <div className="flex justify-between flex-wrap flex-col lg:flex-row gap-8">
