@@ -36,8 +36,8 @@ const FilterModal = memo(
           onClick={onClose}
         />
 
-        <div className="absolute inset-x-0 bottom-0 bg-white rounded-t-xl max-h-[80vh] overflow-hidden">
-          <div className="flex items-center justify-between p-4 border-b border-gray-200">
+        <div className="absolute inset-x-0 bottom-0 bg-white rounded-t-xl max-h-[85vh] overflow-hidden flex flex-col">
+          <div className="flex items-center justify-between p-4 border-b border-gray-200 flex-shrink-0">
             <div className="flex items-center gap-3 text-xl font-bold text-brand-blue-500">
               <img src={filter} alt="Filter icon" className="w-6 h-6" />
               Bộ Lọc
@@ -62,7 +62,7 @@ const FilterModal = memo(
             </button>
           </div>
 
-          <div className="overflow-y-auto max-h-[calc(80vh-120px)]">
+          <div className="flex-1 overflow-y-auto pb-20">
             <FilterSection
               title="Danh mục sản phẩm"
               section="category"
@@ -154,17 +154,16 @@ const FilterModal = memo(
               </div>
             </FilterSection>
           </div>
-
-          <div className="p-4 border-t border-gray-200 flex gap-3">
+          <div className="absolute bottom-0 left-0 right-0 p-4 bg-white border-t border-gray-200 flex gap-3 shadow-lg">
             <button
               onClick={onClearFilters}
-              className="flex-1 py-3 px-4 border border-gray-300 rounded-lg text-gray-700 font-medium hover:bg-gray-50"
+              className="flex-1 py-3 px-4 border border-gray-300 rounded-lg text-gray-700 font-medium hover:bg-gray-50 transition-colors"
             >
               Xóa bộ lọc
             </button>
             <button
               onClick={onClose}
-              className="flex-1 py-3 px-4 bg-brand-blue-500 text-white rounded-lg font-medium hover:bg-brand-blue-600"
+              className="flex-1 py-3 px-4 bg-brand-blue-500 text-white rounded-lg font-medium hover:bg-brand-blue-600 transition-colors"
             >
               Áp dụng
             </button>
